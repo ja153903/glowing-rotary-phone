@@ -1,13 +1,9 @@
 import re
 
 from problem_solving.advent_of_code.constants import AOC_BASE_PATH
+from problem_solving.advent_of_code.utils import read_data
 
 PATH_TO_FILE = f"{AOC_BASE_PATH}/yr2023/day1/data.in"
-
-
-def read_data() -> list[str]:
-    with open(PATH_TO_FILE, "r") as f:
-        return f.readlines()
 
 
 def get_digit_from_line(line: str) -> int:
@@ -53,7 +49,7 @@ def get_complex_digit_from_line(line: str) -> int:
 
 
 if __name__ == "__main__":
-    data = read_data()
+    data = read_data(PATH_TO_FILE)
 
     part1 = sum(get_digit_from_line(line) for line in data)
 
