@@ -34,7 +34,9 @@ WORD_TO_DIGIT_DICT = {
 def get_complex_digit_from_line(line: str) -> int:
     # Use lookahead operator here
     COMPLEX_DIGIT_RE = r"(?=(one|two|three|four|five|six|seven|eight|nine|[1-9]))"
-    matches = [match for match in re.findall(COMPLEX_DIGIT_RE, line) if match]
+    matches: list[str] = [
+        match for match in re.findall(COMPLEX_DIGIT_RE, line) if match
+    ]
 
     first, last = matches[0], matches[-1]
 

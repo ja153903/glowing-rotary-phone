@@ -17,7 +17,7 @@ def is_symbol(ch: str, is_gear_defined: bool = False) -> bool:
 def enqueue_symbols(
     data: list[str], is_gear_defined: bool = False
 ) -> deque[tuple[int, int]]:
-    queue = deque()
+    queue: deque[tuple[int, int]] = deque()
 
     for i, row in enumerate(data):
         for j, col in enumerate(row):
@@ -45,7 +45,7 @@ def build_digit(
     visited: set[tuple[int, int]],
 ) -> int:
     # based on the direction, we're going to move in two directions until we get the appropriate answer
-    dq = deque()
+    dq: deque[str] = deque()
     dq.append(data[start[0]][start[1]])
 
     visited.add(start)
@@ -80,7 +80,7 @@ def build_digit(
 
 
 def find_digits(data: list[str], coord: tuple[int, int]) -> list[int]:
-    digits = []
+    digits: list[int] = []
 
     # We'll keep track of the digits we've visited when checking for this coordinate
     visited: set[tuple[int, int]] = set()
